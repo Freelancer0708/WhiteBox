@@ -89,7 +89,7 @@ export default function Home() {
 
             {!isLoading && (
               <div className="text-gray-800 text-[clamp(13px,3vw,18px)] bg-gray-200 px-[clamp(1px,3vw,18px)] py-[clamp(5px,2vw,14px)] rounded-lg">
-                〇 この場所は今回で {popup.clickCount} 回クリックされました！<br />
+                〇 この場所は今回で {popup.clickCount} 回目のクリックです。<br />
                 〇 この場所がクリックされる確率 {popup.percentage}%<br />
                 〇 クリック総数 {popup.totalClicks} 回
               </div>
