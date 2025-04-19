@@ -79,7 +79,7 @@ export default function Home() {
             <div className='font-bold mb-2 text-center w-[90%] text-[clamp(16px,4vw,24px)]'>
               あなたがクリックしたのは、
             </div>
-            <div className='font-bold mb-6 text-center w-[90%] text-[clamp(20px,5vw,28px)]'>
+            <div className='font-bold mb-6 text-center w-[90%] text-[clamp(20px,5vw,28px)] bg-gray-200 px-[clamp(1px,3vw,18px)] py-[clamp(5px,2vw,14px)] rounded-lg'>
               X座標 {popup.x}px, Y座標 {popup.y}px
             </div>
 
@@ -88,12 +88,16 @@ export default function Home() {
             </div>
 
             {!isLoading && (
-              <div className="text-gray-600 text-[clamp(14px,3vw,18px)]">
+              <div className="text-gray-800 text-[clamp(13px,3vw,18px)] bg-gray-200 px-[clamp(1px,3vw,18px)] py-[clamp(5px,2vw,14px)] rounded-lg">
                 〇 この場所は今回で {popup.clickCount} 回クリックされました！<br />
                 〇 この場所がクリックされる確率 {popup.percentage}%<br />
                 〇 クリック総数 {popup.totalClicks} 回
               </div>
             )}
+
+            <div className="absolute bottom-2 right-4 text-[clamp(10px,2vw,12px)] text-gray-800 italic text-right">
+              ※この豆知識は生成AIにより作成されております。<br/>※内容に誤りがある可能性がありますのでご注意ください。
+            </div>
           </div>
         </div>
       )}
