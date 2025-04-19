@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧊 WhiteBox
 
-## Getting Started
+**WhiteBox** は、真っ白な画面をクリックすると、クリック位置にちなんだ“豆知識”が表示される遊び心あるWebアプリです。どこをクリックしても、新しい発見があるかも？
 
-First, run the development server:
+---
+
+## ✨ 主な機能
+
+- クリックした座標にちなんだ豆知識をAIが生成（OpenAI API使用）
+- 同じ座標をクリックした人の数と全体クリック数から割合を表示
+- ポップアップで情報を表示し、✕ボタンで閉じると再度クリック可能に
+- スマホでも見やすいようにフォントサイズ・行間は可変対応
+
+---
+
+## 🛠 インストール・起動方法
 
 ```bash
+# 1. リポジトリをクローン
+git clone https://github.com/your-username/whitebox.git
+cd whitebox
+
+# 2. 依存関係をインストール
+npm install
+
+# 3. 環境変数を設定（.env.local を作成）
+echo "OPENAI_API_KEY=your-api-key" > .env.local
+
+# 4. 開発サーバーを起動
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ブラウザで `http://localhost:3000` を開いてアクセスしてください。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🧠 使用している技術
 
-## Learn More
+- **Next.js (App Router)**
+- **Tailwind CSS**
+- **OpenAI GPT (推奨モデル: `gpt-4.1-mini` or `gpt-3.5-turbo`)**
+- **仮想DB: JSONファイルでのクリック履歴保存**
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🔐 注意
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- OpenAIのAPIキーが必要です（[APIキー取得はこちら](https://platform.openai.com/account/api-keys)）
+- 長時間のアクセスが増えると、JSONベースの記録に限界が来るため、将来的にはSupabaseなどへの移行をおすすめします
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
