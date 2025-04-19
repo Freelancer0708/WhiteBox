@@ -46,7 +46,7 @@ export default function Home() {
         totalClicks: data.totalClicks,
         percentage: data.percentage,
       });
-    } catch (err) {
+    } catch {
       setPopup({
         x,
         y,
